@@ -23,8 +23,11 @@ export class ChatService {
     });
   }
 
+  getMessages(){
+    return this.http.get<any>('http://localhost:8080/api/getMessages');
+  }
+
   sendMessage(body: any){
-    console.log('body', body)
     return this.http.post<any>('http://localhost:8080/api/sendMessage', body);
   }
 
